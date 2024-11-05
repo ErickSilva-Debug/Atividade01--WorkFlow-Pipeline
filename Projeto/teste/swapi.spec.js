@@ -1,6 +1,6 @@
 // tests/swapi.spec.js
 const request = require("supertest");
-const app = require("../app");
+const app = require("../App");
 
 describe("API Star Wars", () => {
   test("GET /api/characters - Deve retornar status 200", async () => {
