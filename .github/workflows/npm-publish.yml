@@ -1,9 +1,9 @@
-name: Test Planets Endpoint
+name: Test API Endpoints
 
 on: [push, pull_request]
 
 jobs:
-  test-planets:
+  test-api:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,13 +20,10 @@ jobs:
       - name: Fix permissions
         run: chmod +x node_modules/.bin/jest
 
-      - name: List node_modules/.bin permissions
-        run: ls -la node_modules/.bin
-
       - name: Start server
         run: |
           node server.js &
           sleep 3 # Espera o servidor iniciar
 
       - name: Run tests
-        run: npx jest --coverage teste/getAllPlanets.spec.js
+        run: npx jest --coverage teste/
