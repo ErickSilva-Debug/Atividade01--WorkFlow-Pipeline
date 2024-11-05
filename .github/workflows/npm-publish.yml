@@ -24,3 +24,5 @@ jobs:
 
       - name: Run test for planets
         run: npx jest tests/getAllPlanets.spec.js
+      - name: List permissions
+        run: ls -la node_modules/.bin
