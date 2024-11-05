@@ -17,9 +17,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Ensure Jest is executable
-        run: chmod +x ./node_modules/.bin/jest
-
       - name: Run test for planets
-        run: npm test -- test-planets.spec.js
-
+        run: npx jest test-planets.spec.js
