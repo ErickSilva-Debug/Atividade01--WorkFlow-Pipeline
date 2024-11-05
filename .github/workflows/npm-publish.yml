@@ -17,12 +17,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Fix permissions
+        run: chmod +x node_modules/.bin/jest
+
+      - name: List node_modules/.bin permissions
+        run: ls -la node_modules/.bin
+
       - name: Start server
         run: |
           node server.js &
           sleep 3 # Espera o servidor iniciar
 
-      - name: Run test for planets
-        run: npx jest tests/getAllPlanets.spec.js
-      - name: List permissions
-        run: ls -la node_modules/.bin
+      - name: Run tests
+        run: npx jest --coverage teste/getAllPlanets.spec.js
