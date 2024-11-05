@@ -1,34 +1,33 @@
-name: Node.js CI
+name: Test API Endpoints
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
-  build:
+  test-api:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x]
-
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}  # Use a versão da matriz
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run tests
-      run: npm test
+      - name: Fix permissions
+        run: chmod +x node_modules/.bin/jest
+
+      - name: Start server
+        run: |
+          node server.js &
+          sleep 3 # Espera o servidor iniciar
+
+      - name: Run tests
+        run: npx jest --coverage teste/
+
 
 
 
