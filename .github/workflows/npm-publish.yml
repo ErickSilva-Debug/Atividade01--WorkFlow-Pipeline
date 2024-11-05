@@ -13,9 +13,14 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-        
+
       - name: Install dependencies
         run: npm install
 
+      - name: Start server
+        run: |
+          node server.js &
+          sleep 3 # Espera o servidor iniciar
+
       - name: Run test for planets
-        run: npx jest test-planets.spec.js
+        run: npx jest tests/getAllPlanets.spec.js
