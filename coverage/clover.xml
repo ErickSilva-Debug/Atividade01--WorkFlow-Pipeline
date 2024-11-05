@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1730378579575" clover="3.2.0">
-  <project timestamp="1730378579575" name="All files">
+<coverage generated="1730765333801" clover="3.2.0">
+  <project timestamp="1730765333801" name="All files">
     <metrics statements="19" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6" elements="29" coveredelements="29" complexity="0" loc="19" ncloc="19" packages="1" files="1" classes="1"/>
-    <file name="App.js" path="C:\Users\23214290114\Documents\teste\Projeto\App.js">
+    <file name="App.js" path="C:\Users\Erick Silva\Downloads\teste\Projeto\App.js">
       <metrics statements="19" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
       <line num="2" count="9" type="stmt"/>
       <line num="3" count="9" type="stmt"/>
